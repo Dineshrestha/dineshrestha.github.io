@@ -1,0 +1,76 @@
+<!doctype html>
+<!--
+Dinesh Shrestha
+GIS Automation & Spatial Analysis Consultant
+ArcGIS Pro • Python • ArcPy • Data Engineering
+email: dinesh.shrestha015@gmail.com
+Portfolio: dineshrestha.github.io
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Case study: Automated GIS Data Acquisition, an ArcGIS Pro Python toolbox by Dinesh Shrestha for public GIS data acquisition, clipping, projection, QA, provenance, and delivery.">
+  <meta name="theme-color" content="#12211b">
+  <title>Automated GIS Data Acquisition | Dinesh Shrestha</title>
+  <style>
+    :root{--ink:#12211b;--paper:#f3f0e7;--cream:#fbfaf6;--green:#1d5b46;--mint:#c9e4d5;--orange:#e86e3f;--line:rgba(18,33,27,.18)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif}a{color:inherit;text-decoration:none}
+    .nav{position:sticky;top:0;z-index:20;min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:0 clamp(22px,6vw,90px);background:rgba(243,240,231,.95);border-bottom:1px solid var(--line);backdrop-filter:blur(14px)}
+    .brand{font-size:24px;font-weight:900;letter-spacing:-.06em}.brand span{color:var(--orange)}.navlinks{display:flex;gap:24px;font-size:13px;font-weight:800}.navlinks a:hover{color:var(--green)}
+    .hero{padding:clamp(70px,9vw,130px) clamp(24px,7vw,110px) 72px;background:var(--ink);color:#f7f5ee}.eyebrow{margin:0 0 20px;color:#8ec5aa;font-size:12px;font-weight:900;letter-spacing:.18em}.hero h1{max-width:1050px;margin:0;font-size:clamp(48px,7vw,94px);line-height:.96;letter-spacing:-.06em}.hero h1 em{color:#a8d1bd;font-family:Georgia,serif;font-weight:400}.lede{max-width:800px;margin:30px 0 0;color:#cad4cf;font-size:clamp(17px,1.5vw,21px);line-height:1.65}
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}.button{display:inline-flex;min-height:50px;align-items:center;justify-content:center;padding:0 22px;border:1px solid currentColor;font-size:13px;font-weight:800;transition:180ms ease}.button.primary{background:#f7f5ee;color:var(--ink);border-color:#f7f5ee}.button:hover{transform:translateY(-2px);box-shadow:4px 4px 0 var(--orange)}
+    .hero-image{margin-top:54px;border:1px solid rgba(255,255,255,.18);background:#fff;overflow:hidden}.hero-image img{display:block;width:100%;height:auto}
+    .section{padding:clamp(72px,9vw,128px) clamp(24px,7vw,110px)}.section.cream{background:var(--cream)}.section.mint{background:#dce8df}.heading{max-width:840px;margin-bottom:48px}.heading .eyebrow{color:var(--green)}.heading h2{margin:0;font-size:clamp(36px,5vw,66px);line-height:1.02;letter-spacing:-.05em}.heading p:last-child{max-width:720px;color:#59635e;font-size:18px;line-height:1.65}
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.stat{padding:28px 22px;border-right:1px solid var(--line)}.stat:last-child{border-right:0}.stat strong{display:block;font-family:Georgia,serif;font-size:34px}.stat span{display:block;margin-top:7px;color:#647068;font-size:11px;text-transform:uppercase;letter-spacing:.08em;line-height:1.5}
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:clamp(34px,7vw,100px);align-items:start}.two-col h3{margin:0 0 16px;font-size:30px;letter-spacing:-.03em}.two-col p,.two-col li{color:#59635e;line-height:1.75}.two-col ul{padding-left:20px}
+    .workflow{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:38px}.step{min-height:150px;padding:22px;background:var(--green);color:#fff;border:1px solid rgba(18,33,27,.14)}.step span{font-family:Georgia,serif;font-size:28px;color:#bce0ce}.step strong{display:block;margin-top:18px;font-size:15px}.step p{margin:8px 0 0;color:#dbe9e2;font-size:13px;line-height:1.55}
+    .challenge{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(36px,7vw,110px);align-items:start}.challenge-card{padding:32px;background:var(--ink);color:#fff}.challenge-card strong{font-family:Georgia,serif;font-size:54px;color:#a8d1bd}.challenge-card p{color:#cad4cf;line-height:1.65}
+    .detail-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.detail{padding:28px;border-top:1px solid rgba(29,91,70,.4);background:rgba(255,255,255,.26)}.detail span{color:var(--green);font-family:"Courier New",monospace;font-size:11px}.detail h3{margin:16px 0 12px;font-size:22px}.detail p{margin:0;color:#59635e;line-height:1.65;font-size:14px}.tech{display:flex;flex-wrap:wrap;gap:9px;margin-top:30px}.tech span{padding:8px 11px;border:1px solid rgba(29,91,70,.32);background:var(--cream);font-size:12px;font-weight:800}
+    .result{background:var(--green);color:#fff;text-align:center}.result .eyebrow{color:#bce0ce}.result h2{max-width:900px;margin:0 auto;font-size:clamp(38px,5vw,70px);line-height:1.02;letter-spacing:-.05em}.result p{max-width:760px;margin:28px auto 0;color:#d7e8df;font-size:18px;line-height:1.7}.result .actions{justify-content:center}
+    footer{padding:36px clamp(24px,7vw,110px);background:var(--ink);color:#aeb9b3;font-size:12px;text-align:center}
+    @media(max-width:900px){.stats{grid-template-columns:repeat(2,1fr)}.stat:nth-child(2){border-right:0}.two-col,.challenge{grid-template-columns:1fr}.workflow{grid-template-columns:1fr 1fr}.detail-grid{grid-template-columns:1fr}}
+    @media(max-width:620px){.navlinks{gap:12px;font-size:11px}.hero{padding-top:58px}.stats{grid-template-columns:1fr}.stat{border-right:0;border-bottom:1px solid var(--line)}.stat:last-child{border-bottom:0}.workflow{grid-template-columns:1fr}.actions{flex-direction:column}.button{width:100%}}
+  </style>
+</head>
+<body>
+  <nav class="nav" aria-label="Case study navigation">
+    <a class="brand" href="index.html">DS<span>.</span></a>
+    <div class="navlinks"><a href="index.html#work">Portfolio</a><a href="https://github.com/Dineshrestha/automated-gis-data-acquisition">GitHub</a><a href="mailto:dinesh.shrestha015@gmail.com">Contact</a></div>
+  </nav>
+  <main>
+    <section class="hero">
+      <p class="eyebrow">GIS DEVELOPER CASE STUDY · ARCGIS PRO · PYTHON · ARCPY · REST</p>
+      <h1>Automated GIS <em>Data Acquisition</em></h1>
+      <p class="lede">A production-oriented ArcGIS Pro Python toolbox that turns a point, line, or polygon study area into a project-ready geodatabase by automating public GIS data acquisition, clipping, projection, provenance, QA, reporting, and delivery.</p>
+      <div class="actions"><a class="button primary" href="https://github.com/Dineshrestha/automated-gis-data-acquisition">View on GitHub ↗</a><a class="button" href="https://github.com/Dineshrestha/automated-gis-data-acquisition/releases/latest">Download latest release ↗</a></div>
+      <div class="hero-image"><img src="https://raw.githubusercontent.com/Dineshrestha/automated-gis-data-acquisition/main/docs/images/automated_gis_data_acquisition_banner.png" alt="Automated GIS Data Acquisition workflow"></div>
+    </section>
+    <section class="section">
+      <div class="heading"><p class="eyebrow">THE PROBLEM</p><h2>Project setup should not mean repeating the same portal-by-portal workflow.</h2><p>Environmental and infrastructure projects routinely require analysts to visit multiple agency portals, identify the right dataset, download it, clip it to a study area, project it, organize outputs, and document where it came from. The work is necessary, but much of it is repetitive and inconsistent.</p></div>
+      <div class="stats" aria-label="Project validation highlights"><div class="stat"><strong>8</strong><span>public-data source groups</span></div><div class="stat"><strong>2,695</strong><span>NHD flowlines acquired in 3m 57s during a 10-mile test</span></div><div class="stat"><strong>4</strong><span>automatic 3DEP tiles used after a server export limit</span></div><div class="stat"><strong>0</strong><span>manual portal downloads required during an automated run</span></div></div>
+    </section>
+    <section class="section cream">
+      <div class="two-col"><div><p class="eyebrow">THE SOLUTION</p><h3>One study area. One toolbox. Multiple authoritative datasets.</h3><p>The toolbox accepts a point, polyline, or polygon study area, applies an optional buffer, communicates directly with public ArcGIS REST and ImageServer services, and delivers standardized GIS outputs inside a project geodatabase.</p></div><div><h3>Supported data</h3><ul><li>FEMA NFHL flood hazard zones</li><li>USFWS National Wetlands Inventory</li><li>USGS hydrography flowlines and waterbodies</li><li>USGS NLCD land cover</li><li>USGS 3DEP elevation and approximately 10 m DEM</li><li>U.S. Census state and county boundaries</li><li>USDA NASS Cropland Data Layer</li></ul></div></div>
+      <div class="workflow" aria-label="Automated acquisition workflow"><div class="step"><span>01</span><strong>Input</strong><p>Study area and optional buffer.</p></div><div class="step"><span>02</span><strong>Prepare AOI</strong><p>Validate, dissolve, buffer, and project as required.</p></div><div class="step"><span>03</span><strong>Acquire</strong><p>Query authoritative REST and ImageServer sources.</p></div><div class="step"><span>04</span><strong>Process</strong><p>Batch, clip, mosaic, project, and standardize.</p></div><div class="step"><span>05</span><strong>Deliver</strong><p>Geodatabase, provenance log, QA report, and manifest.</p></div></div>
+    </section>
+    <section class="section">
+      <div class="challenge"><div class="challenge-card"><p class="eyebrow">ENGINEERING CHALLENGE</p><strong>8000 × 8000</strong><p>A large B2H-style 20-mile study area exceeded the USGS 3DEP ImageServer export-size limit. A normal raster request could not complete.</p></div><div><p class="eyebrow">THE FIX</p><div class="heading"><h2>Make the workflow adapt instead of fail.</h2></div><p style="color:#59635e;line-height:1.75">I added an automatic raster fallback that detects service-size errors, recursively subdivides the AOI, downloads manageable raster tiles, mosaics the results, and projects the final raster to the study-area coordinate system. In testing, the failed 3DEP request automatically became four successful tiles and a single final raster.</p></div></div>
+    </section>
+    <section class="section mint">
+      <div class="heading"><p class="eyebrow">GIS DEVELOPER FEATURES</p><h2>Built as a resilient data-engineering workflow, not a one-off script.</h2></div>
+      <div class="detail-grid">
+        <article class="detail"><span>01 / VECTOR</span><h3>Adaptive batching</h3><p>Large REST requests are downloaded in batches and recursively subdivided when a provider times out or rejects the request.</p></article>
+        <article class="detail"><span>02 / SPATIAL QUERY</span><h3>Actual-AOI querying</h3><p>NHD Flowline acquisition uses the actual study-area geometry and optimized 125-feature batches to reduce unnecessary candidate features and timeout risk.</p></article>
+        <article class="detail"><span>03 / RASTER</span><h3>Automatic tiling</h3><p>ImageServer size-limit failures trigger AOI subdivision, tile acquisition, mosaicking, and reprojection without manual intervention.</p></article>
+        <article class="detail"><span>04 / RELIABILITY</span><h3>Failure isolation</h3><p>A temporary failure from one public provider is logged without terminating acquisition from the remaining selected sources.</p></article>
+        <article class="detail"><span>05 / QA</span><h3>Provenance + validation</h3><p>Each run records source agency, service URL, year, feature or raster properties, CRS, runtime, acquisition status, and QA status.</p></article>
+        <article class="detail"><span>06 / DELIVERY</span><h3>Project-ready reporting</h3><p>The workflow produces a geodatabase log, an HTML QA report, and a CSV acquisition manifest alongside the GIS deliverables.</p></article>
+      </div>
+      <div class="tech" aria-label="Technologies used"><span>ArcGIS Pro</span><span>Python</span><span>ArcPy</span><span>ArcGIS REST API</span><span>ImageServer</span><span>File Geodatabase</span><span>Raster Processing</span><span>Spatial QA/QC</span><span>Git</span><span>GitHub</span></div>
+    </section>
+    <section class="section result"><p class="eyebrow">RESULT</p><h2>A repetitive GIS setup task became a reusable, fault-tolerant acquisition system.</h2><p>The project demonstrates GIS development beyond geoprocessing: API integration, adaptive error handling, vector and raster processing, provenance, QA, packaging, documentation, and versioned software delivery.</p><div class="actions"><a class="button primary" href="https://github.com/Dineshrestha/automated-gis-data-acquisition">Explore the source code ↗</a><a class="button" href="index.html#work">Back to portfolio</a></div></section>
+  </main>
+  <footer>Dinesh Shrestha · GIS Automation &amp; Spatial Analysis Consultant · ArcGIS Pro • Python • ArcPy • Data Engineering</footer>
+</body>
+</html>
