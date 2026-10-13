@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Draft success story: automated utility field-data and distribution map-package production by Dinesh Shrestha.">
+  <meta name="theme-color" content="#12211b"><title>Utility Field Data & Map Packages | Dinesh Shrestha</title>
+  <style>
+    :root{--ink:#12211b;--paper:#f3f0e7;--cream:#fbfaf6;--green:#1d5b46;--mint:#c9e4d5;--orange:#e86e3f;--line:rgba(18,33,27,.18)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif}a{color:inherit;text-decoration:none}
+    .nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:0 clamp(22px,6vw,90px);border-bottom:1px solid var(--line);background:rgba(243,240,231,.96)}.brand{font-size:24px;font-weight:900;letter-spacing:-.06em}.brand span{color:var(--orange)}.navlinks{display:flex;align-items:center;gap:18px;font-size:12px;font-weight:800}.draft{padding:7px 10px;border:1px solid var(--green);color:var(--green);font-size:10px;font-weight:900;letter-spacing:.12em}
+    .hero{padding:clamp(72px,10vw,145px) clamp(24px,7vw,110px) 76px;background:var(--ink);color:#f7f5ee}.eyebrow{margin:0 0 22px;color:#8ec5aa;font-size:12px;font-weight:900;letter-spacing:.18em}.hero h1{max-width:1120px;margin:0;font-size:clamp(46px,6.8vw,96px);line-height:.95;letter-spacing:-.064em}.hero h1 em{color:#a8d1bd;font-family:Georgia,serif;font-weight:400}.lede{max-width:880px;margin:32px 0 0;color:#cad4cf;font-size:clamp(17px,1.5vw,21px);line-height:1.68}
+    .metrics{display:grid;grid-template-columns:repeat(3,1fr);margin-top:56px;border-top:1px solid rgba(255,255,255,.18)}.metric{padding:27px 24px 0 0}.metric strong{display:block;color:#fff;font-family:Georgia,serif;font-size:clamp(34px,4.2vw,56px)}.metric span{display:block;margin-top:8px;color:#9fb0a7;font-size:11px;line-height:1.5;text-transform:uppercase;letter-spacing:.08em}
+    .section{padding:clamp(76px,9vw,130px) clamp(24px,7vw,110px)}.cream{background:var(--cream)}.mint{background:#dce8df}.section-head{display:grid;grid-template-columns:.84fr 1.16fr;gap:8vw;align-items:start;margin-bottom:48px}.section-head h2{margin:0;font-size:clamp(38px,5vw,68px);line-height:1.02;letter-spacing:-.05em}.section-head p{margin:0;color:#59635e;font-size:18px;line-height:1.7}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{padding:29px;border:1px solid var(--line);background:var(--paper)}.card span{color:var(--orange);font-family:"Courier New",monospace;font-size:11px}.card h3{margin:16px 0 12px;font-size:22px}.card p{margin:0;color:#59635e;line-height:1.65}
+    .workflow{display:grid;grid-template-columns:repeat(6,1fr);gap:9px}.step{min-height:200px;padding:21px;background:var(--green);color:#fff}.step .num{font-family:Georgia,serif;font-size:27px;color:#bce0ce}.step h3{margin:22px 0 10px;font-size:16px}.step p{margin:0;color:#dbe9e2;font-size:12px;line-height:1.58}
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,7vw,100px)}.two-col h3{margin:0 0 18px;font-size:29px;letter-spacing:-.03em}.two-col p,.two-col li{color:#59635e;line-height:1.75}.two-col ul{padding-left:19px;margin:0}.layers{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}.layers article{padding:24px;background:var(--cream)}.layers strong{display:block;margin-bottom:8px}.layers p{margin:0;color:#59635e;font-size:14px;line-height:1.6}
+    .result{background:var(--green);color:#fff;text-align:center}.result .eyebrow{color:#bce0ce}.result h2{max-width:980px;margin:0 auto;font-size:clamp(40px,5.6vw,76px);line-height:1.02;letter-spacing:-.055em}.result p{max-width:810px;margin:28px auto 0;color:#d7e8df;font-size:18px;line-height:1.7}.tags{display:flex;flex-wrap:wrap;justify-content:center;gap:9px;margin-top:34px}.tags span{padding:9px 12px;border:1px solid rgba(255,255,255,.35);font-size:11px;font-weight:800}
+    footer{padding:34px 24px;background:var(--ink);color:#aeb9b3;text-align:center;font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+    @media(max-width:1050px){.workflow{grid-template-columns:repeat(3,1fr)}}@media(max-width:900px){.section-head,.two-col{grid-template-columns:1fr}.cards{grid-template-columns:1fr}}@media(max-width:620px){.nav{min-height:64px;padding:0 20px}.navlinks>a:first-child{display:none}.hero{padding:64px 22px 72px}.metrics,.workflow,.layers{grid-template-columns:1fr}.section{padding:72px 22px}}
+</style>
+</head>
+<body>
+  <nav class="nav"><a class="brand" href="index.html">DS<span>.</span></a><div class="navlinks"><a href="success-stories.html">All Success Stories</a><span class="draft">DRAFT · NOT PUBLISHED</span></div></nav>
+  <main>
+    <section class="hero">
+      <p class="eyebrow">SUCCESS STORY · FIELD DATA · AUTOMATION · GIS PRODUCTION</p>
+      <h1>Field Data to <em>Distribution Map Package</em></h1>
+      <p class="lede">A one-run production workflow that converts multiple field-data spreadsheets into standardized Excel workbooks, CSVs, shapefiles, PDF summaries, KMZs, and ArcGIS Pro map-package inputs—with controlled naming, symbology, pop-ups, and delivery structure.</p>
+      <div class="metrics"><div class="metric"><strong>5–7</strong><span>FieldNote Excel exports commonly processed per cycle</span></div><div class="metric"><strong>3–4 hr</strong><span>previous manual production effort</span></div><div class="metric"><strong>20–30 min</strong><span>automated processing and package preparation</span></div></div>
+    </section>
+
+    <section class="section cream">
+      <div class="section-head"><h2>Field collection created a long chain of office work.</h2><p>Crews captured utility vegetation-management information in FieldNote. The resulting Excel exports then had to be renamed, organized, converted, spatialized, summarized, symbolized, exported, and packaged for several different users. Every cycle repeated the same transformations across multiple files and formats.</p></div>
+      <div class="cards">
+        <article class="card"><span>01 / INPUTS</span><h3>Several independent exports</h3><p>Spans, units, focus areas, planner notes, tickets, skips, and access information arrived as separate spreadsheets with different geometries and business fields.</p></article>
+        <article class="card"><span>02 / OUTPUTS</span><h3>Many required formats</h3><p>Office and field teams needed spreadsheets, CSVs, shapefiles, PDFs, KMZs, maps, and ArcGIS Pro packages—not one universal deliverable.</p></article>
+        <article class="card"><span>03 / CONSISTENCY</span><h3>Presentation carried meaning</h3><p>Names, folder structure, colors, icons, layer order, pop-up fields, map layouts, and summary sheets had to remain consistent from cycle to cycle.</p></article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head"><h2>One selected folder starts the production chain.</h2><p>A GUI folder picker launches the workflow. The script validates the expected folder and template, creates the delivery structure, then moves through data conversion, spatial processing, reporting, KMZ creation, and ArcGIS Pro production.</p></div>
+      <div class="workflow">
+        <article class="step"><span class="num">01</span><h3>Organize</h3><p>Rename date-stamped exports using the cycle identifier and move them into the package’s spreadsheet folder.</p></article>
+        <article class="step"><span class="num">02</span><h3>Standardize</h3><p>Add reference IDs, enforce required column order, and convert each Excel file to CSV.</p></article>
+        <article class="step"><span class="num">03</span><h3>Spatialize</h3><p>Create point, line, and polygon shapefiles from coordinates and WKT geometry.</p></article>
+        <article class="step"><span class="num">04</span><h3>Summarize</h3><p>Populate the workbook template, build span summaries, apply borders/wrapping, and export data-bearing sheets to PDF.</p></article>
+        <article class="step"><span class="num">05</span><h3>Package</h3><p>Build a styled KMZ with layer folders, icons, linework, polygon fills, labels, and attribute pop-ups.</p></article>
+        <article class="step"><span class="num">06</span><h3>Map & deliver</h3><p>Use the standardized layers in ArcGIS Pro for map series, PDFs, standard symbology, and final map-package delivery.</p></article>
+      </div>
+    </section>
+
+    <section class="section mint">
+      <div class="two-col">
+        <div><p class="eyebrow">DELIVERY PACKAGE</p><h3>Multiple formats from the same source data</h3><ul><li>Renamed and organized source spreadsheets</li><li>Standardized CSV files</li><li>Point, line, and polygon shapefiles</li><li>Populated Excel summary workbook</li><li>PDF summary and map exports</li><li>Styled KMZ for field and client review</li><li>ArcGIS Pro maps and map packages</li><li>Structured folders and processing logs</li></ul></div>
+        <div><p class="eyebrow">ARCHITECTURE</p><h3>Data transformation before cartography</h3><p>The workflow separates data preparation from final map production. FieldNote exports are first normalized into stable tabular and spatial layers. Those standardized layers then feed the KMZ, spreadsheet, PDF, and ArcGIS Pro stages.</p><p>This reduces duplicated logic: geometry, identifiers, field names, and feature types are resolved once, then reused consistently across deliverables.</p></div>
+      </div>
+    </section>
+
+    <section class="section cream">
+      <div class="section-head"><h2>Different field layers required different rules.</h2><p>The workflow identifies files and geometry types by their role, applies layer-specific parsing, and carries the attributes needed for map symbology, summaries, and pop-ups.</p></div>
+      <div class="layers">
+        <article><strong>Spans</strong><p>Point features symbolized by crew type, including Bucket, Manual, No Work, and BYB categories.</p></article>
+        <article><strong>Units</strong><p>Point features symbolized by unit type with standardized triangle icons, including trimming, removal, mowing, foliar, pole, guy-wire, LDR, and Make Safe work.</p></article>
+        <article><strong>Focus Areas</strong><p>Polygon features parsed from WKT and styled by business type such as hazards, sensitive customers, refusals, and special conditions.</p></article>
+        <article><strong>Planner Notes</strong><p>Point features with distinct visual categories for access, traffic, crossings, restricted areas, fuel locations, road conditions, and other operational notes.</p></article>
+        <article><strong>CSS Tickets & Oak Skips</strong><p>Specialized layers with controlled column ordering and dedicated iconography so important records remain visually distinct.</p></article>
+        <article><strong>Access Routes</strong><p>LineString and MultiLineString geometry parsed from FieldNote WKT and displayed as a separate styled line layer in the KMZ.</p></article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="two-col">
+        <div><p class="eyebrow">TECHNICAL CHALLENGE</p><h3>Field geometry was not always clean</h3><p>Access routes and focus areas arrived as text geometry. The parser was hardened to handle quoted WKT, “Shape =” prefixes, scientific notation, LineString, MultiLineString, Polygon, MultiPolygon, and geometry collections.</p><p>Invalid rows are counted and reported rather than silently entering the deliverable. Point data are created from longitude/latitude, projected for GIS use, and reprojected to WGS 84 when written to KML/KMZ.</p></div>
+        <div><p class="eyebrow">MAP PACKAGE PRODUCTION</p><h3>Consistent maps without rebuilding every cycle</h3><p>Once the shapefiles are produced, the ArcGIS Pro stage applies standard layer naming, symbology, strip-map indices, layouts, and map-series rules. The resulting package supports consistent PDFs and reusable project maps rather than rebuilding the cartography from scratch.</p><p>The same automation pattern was later adapted for Distribution Cycle, Mid-Cycle, Foliar, Gas Transmission, and Wildfire Mitigation work packages.</p></div>
+      </div>
+    </section>
+
+    <section class="section cream">
+      <div class="section-head"><h2>QA/QC follows the package from input to delivery.</h2><p>The workflow reports failures at the step where they occur and retains enough structure for a reviewer to trace every output back to its source file.</p></div>
+      <div class="layers">
+        <article><strong>Input validation</strong><p>Confirm the selected cycle folder, required template, expected files, headers, coordinates, and geometry fields.</p></article>
+        <article><strong>Record control</strong><p>Compare source rows with CSV and shapefile counts; report invalid or missing geometries.</p></article>
+        <article><strong>Schema control</strong><p>Add reference IDs, retain required fields, enforce ticket-column order, and preserve stable names across formats.</p></article>
+        <article><strong>Visual consistency</strong><p>Apply standard colors, icons, polygon borders, access-route styling, layer folders, labels, and pop-up content.</p></article>
+        <article><strong>Report quality</strong><p>Export only workbook sheets containing real data and format written ranges with borders and wrapped alignment.</p></article>
+        <article><strong>Delivery completeness</strong><p>Verify spreadsheets, CSVs, shapefiles, KMZ, PDFs, maps, packages, logs, and folder naming before handoff.</p></article>
+      </div>
+    </section>
+
+    <section class="section result"><p class="eyebrow">RESULT</p><h2>A multi-hour production routine became a repeatable one-run system.</h2><p>The automated workflow reduced a typical 3–4 hour manual process to approximately 20–30 minutes. It also turned a fragile sequence of individual conversions into a maintainable data-engineering pipeline with consistent geometry, symbology, reporting, and package structure.</p><div class="tags"><span>Python</span><span>ArcGIS Pro</span><span>ArcPy</span><span>pandas</span><span>GeoPandas</span><span>Shapely</span><span>openpyxl</span><span>Excel</span><span>CSV</span><span>Shapefile</span><span>KMZ</span><span>PDF</span><span>Map Packages</span></div></section>
+  </main>
+  <footer>Draft success story · Dinesh Shrestha · Client data and identifiers intentionally excluded</footer>
+</body></html>
