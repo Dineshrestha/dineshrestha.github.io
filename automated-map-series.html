@@ -22,7 +22,12 @@
     footer{padding:34px 24px;background:var(--ink);color:#aeb9b3;text-align:center;font-size:11px;letter-spacing:.08em;text-transform:uppercase}
     @media(max-width:900px){.section-head,.two-col{grid-template-columns:1fr}.problem-grid{grid-template-columns:1fr}.workflow{grid-template-columns:repeat(2,1fr)}}
     @media(max-width:620px){.nav{min-height:64px;padding:0 20px}.hero{padding:64px 22px 72px}.impact{grid-template-columns:1fr}.metric{padding-top:22px}.section{padding:72px 22px}.workflow,.qa-list{grid-template-columns:1fr}}
-  </style>
+  
+    .case-story{background:var(--cream)}.case-story .story-wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:8vw;align-items:start}.case-kicker{color:var(--orange);font-size:12px;font-weight:900;letter-spacing:.18em;text-transform:uppercase}.case-story h2{margin:14px 0 0;font-size:clamp(38px,5vw,68px);line-height:1.02;letter-spacing:-.05em}.case-copy p{margin:0 0 18px;color:#59635e;font-size:18px;line-height:1.72}.case-copy strong{color:var(--ink)}
+    .case-roadmap{padding-top:0;background:var(--cream)}.case-roadmap h3{margin:0 0 28px;font-size:24px}.case-flow{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;background:var(--line);border:1px solid var(--line)}.case-flow article{position:relative;padding:25px 20px;background:var(--paper);min-height:165px}.case-flow b{display:block;margin-bottom:18px;color:var(--orange);font-family:Georgia,serif;font-size:26px}.case-flow strong{display:block;margin-bottom:8px;font-size:15px}.case-flow p{margin:0;color:#59635e;font-size:13px;line-height:1.55}
+    .deliverables{background:var(--ink);color:#fff}.deliverables .section-head p{color:#b8c5bf}.package-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.package{padding:24px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.045)}.package .icon{display:block;margin-bottom:16px;color:#9ed0b7;font-family:Georgia,serif;font-size:27px}.package strong{display:block;margin-bottom:8px}.package p{margin:0;color:#b8c5bf;font-size:14px;line-height:1.6}.package-note{margin:28px 0 0;padding:18px 20px;border-left:4px solid var(--orange);background:rgba(255,255,255,.05);color:#d5ded9;line-height:1.65}
+    @media(max-width:900px){.case-story .story-wrap{grid-template-columns:1fr}.case-flow{grid-template-columns:1fr 1fr}.package-grid{grid-template-columns:1fr 1fr}}@media(max-width:620px){.case-flow,.package-grid{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
   <nav class="nav" aria-label="Draft page navigation">
@@ -39,7 +44,7 @@
         <div class="metric"><strong>1,200+</strong><span>standardized map pages supported through automation</span></div>
         <div class="metric"><strong>1 workflow</strong><span>from map index to validated PDF deliverables</span></div>
       </div>
-    </section>
+    </section><section class="section case-story"><div class="story-wrap"><div><p class="case-kicker">THE STORY</p><h2>A transmission mapbook should not require hundreds of repeated clicks.</h2></div><div class="case-copy"><p>A large transmission project needed consistent map sheets for field coordination, review, and delivery. Every page required the same layer checks, dynamic text, scale behavior, export settings, filename rules, and final PDF assembly. Manual repetition made production slow and made small inconsistencies difficult to catch.</p><p><strong>We separated cartographic judgment from repetitive production.</strong> The roadmap used an approved index and layout as the control system: validate page records, apply page-specific rules, export individual sheets, merge them in the correct sequence, and verify the finished book.</p><p>Real production required adjustments for missing pages, dynamic text, layer visibility, irregular extents, and export failures. Those exceptions became explicit rules instead of last-minute manual fixes. The resulting workflow supported more than 1,200 standardized pages and cut production effort by roughly 90%.</p></div></div></section><section class="section case-roadmap"><h3>Roadmap at a glance</h3><div class="case-flow"><article><b>01</b><strong>Assess</strong><p>Document page rules, layouts, naming, scales, and delivery standards.</p></article><article><b>02</b><strong>Index</strong><p>Build and validate the map-series index that controls every sheet.</p></article><article><b>03</b><strong>Automate</strong><p>Apply dynamic text, visibility, extent, and export logic.</p></article><article><b>04</b><strong>Recover</strong><p>Log failures, rerun selected pages, and preserve approved outputs.</p></article><article><b>05</b><strong>Assemble</strong><p>Merge, order, inspect, and package the final mapbook.</p></article></div></section>
 
     <section class="section cream">
       <div class="section-head">
@@ -105,13 +110,13 @@
       </div>
     </section>
 
-    <section class="section result">
+    <section class="section deliverables"><div class="section-head"><h2>What the finished package included.</h2><p>The solution was delivered as a complete, professionally organized package—not a loose script or an unexplained GIS file. Each item supported production, review, QA/QC, handoff, or future reruns.</p></div><div class="package-grid"><article class="package"><span class="icon">01</span><strong>Mapbook PDFs</strong><p>Merged, ordered, client-ready books with standardized page presentation.</p></article><article class="package"><span class="icon">02</span><strong>Individual sheets</strong><p>Page-level PDFs for review, replacement, and targeted distribution.</p></article><article class="package"><span class="icon">03</span><strong>ArcGIS Pro project</strong><p>Configured layouts, map-series index, layer organization, and symbology.</p></article><article class="package"><span class="icon">04</span><strong>QA records</strong><p>Page counts, missing-page checks, export logs, and filename validation.</p></article><article class="package"><span class="icon">05</span><strong>Source package</strong><p>Index layer, approved supporting data, and repeatable production settings.</p></article><article class="package"><span class="icon">06</span><strong>Documentation</strong><p>README covering inputs, reruns, exceptions, folder structure, and handoff.</p></article></div><p class="package-note"><strong>Professional handoff:</strong> consistent naming, organized folders, review-ready outputs, documentation, and enough QA evidence for another GIS professional to understand what was produced and how to use it.</p></section><section class="section result">
       <p class="eyebrow">RESULT</p>
       <h2>Mapbook production became faster, repeatable, and easier to verify.</h2>
       <p>The workflow reduced a labor-intensive production process by approximately 90% and supported more than 1,200 standardized map pages. More importantly, it converted individual manual decisions into documented rules that can be repeated, reviewed, and maintained.</p>
       <div class="tags" aria-label="Technologies and capabilities"><span>ArcGIS Pro</span><span>Python</span><span>ArcPy</span><span>Map Series</span><span>PDF Automation</span><span>Dynamic Text</span><span>GIS QA/QC</span></div>
     </section>
-  </main>
+  <section class="cta"><p class="eyebrow" style="color:var(--green)">LET’S SOLVE IT</p><h2>Have a similar GIS problem?</h2><p>Want the details, or need a practical solution for a repetitive workflow, difficult dataset, or spatial-analysis challenge? Let’s talk about your project.</p><a href="contact.html">Contact Dinesh ↗</a></section></main>
   <footer>Draft success story · Dinesh Shrestha · GIS Automation &amp; Spatial Analysis</footer>
 </body>
 </html>
