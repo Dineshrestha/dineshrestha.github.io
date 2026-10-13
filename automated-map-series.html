@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Success story: automated ArcGIS Pro map-series production by Dinesh Shrestha.">
+  <meta name="theme-color" content="#12211b">
+  <title>Automated Map Series | Dinesh Shrestha</title>
+  <style>
+    :root{--ink:#12211b;--paper:#f3f0e7;--cream:#fbfaf6;--green:#1d5b46;--mint:#c9e4d5;--orange:#e86e3f;--line:rgba(18,33,27,.18)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif}a{color:inherit;text-decoration:none}
+    .nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:0 clamp(22px,6vw,90px);background:rgba(243,240,231,.96);border-bottom:1px solid var(--line)}
+    .brand{font-size:24px;font-weight:900;letter-spacing:-.06em}.brand span{color:var(--orange)}.draft{padding:7px 10px;border:1px solid var(--green);color:var(--green);font-size:10px;font-weight:900;letter-spacing:.12em}
+    .hero{padding:clamp(72px,10vw,145px) clamp(24px,7vw,110px) 76px;background:var(--ink);color:#f7f5ee}.eyebrow{margin:0 0 22px;color:#8ec5aa;font-size:12px;font-weight:900;letter-spacing:.18em}.hero h1{max-width:1050px;margin:0;font-size:clamp(50px,7.5vw,104px);line-height:.94;letter-spacing:-.065em}.hero h1 em{color:#a8d1bd;font-family:Georgia,serif;font-weight:400}.lede{max-width:820px;margin:32px 0 0;color:#cad4cf;font-size:clamp(17px,1.5vw,21px);line-height:1.65}
+    .impact{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(255,255,255,.18);margin-top:56px}.metric{padding:28px 24px 0 0}.metric strong{display:block;color:#fff;font-family:Georgia,serif;font-size:clamp(34px,4.4vw,58px)}.metric span{display:block;margin-top:8px;color:#9fb0a7;font-size:11px;line-height:1.5;text-transform:uppercase;letter-spacing:.09em}
+    .section{padding:clamp(76px,9vw,130px) clamp(24px,7vw,110px)}.cream{background:var(--cream)}.mint{background:#dce8df}.section-head{display:grid;grid-template-columns:.82fr 1.18fr;gap:8vw;align-items:start;margin-bottom:48px}.section-head h2{margin:0;font-size:clamp(38px,5vw,68px);line-height:1.02;letter-spacing:-.05em}.section-head p{margin:0;color:#59635e;font-size:18px;line-height:1.7}
+    .problem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{padding:30px;border:1px solid var(--line);background:var(--paper)}.card span{color:var(--orange);font-family:"Courier New",monospace;font-size:11px}.card h3{margin:16px 0 12px;font-size:22px}.card p{margin:0;color:#59635e;line-height:1.65}
+    .workflow{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.step{min-height:190px;padding:24px;background:var(--green);color:#fff}.step .num{font-family:Georgia,serif;font-size:28px;color:#bce0ce}.step h3{margin:24px 0 10px;font-size:17px}.step p{margin:0;color:#dbe9e2;font-size:13px;line-height:1.6}
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,7vw,100px)}.two-col h3{margin:0 0 18px;font-size:28px;letter-spacing:-.03em}.two-col p,.two-col li{color:#59635e;line-height:1.75}.two-col ul{padding-left:19px;margin:0}
+    .qa-list{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}.qa{padding:22px;background:var(--cream)}.qa strong{display:block;margin-bottom:8px}.qa p{margin:0;color:#59635e;font-size:14px;line-height:1.55}
+    .result{background:var(--green);color:#fff;text-align:center}.result .eyebrow{color:#bce0ce}.result h2{max-width:950px;margin:0 auto;font-size:clamp(40px,5.7vw,78px);line-height:1.01;letter-spacing:-.055em}.result p{max-width:770px;margin:28px auto 0;color:#d7e8df;font-size:18px;line-height:1.7}.tags{display:flex;flex-wrap:wrap;justify-content:center;gap:9px;margin-top:34px}.tags span{padding:9px 12px;border:1px solid rgba(255,255,255,.35);font-size:11px;font-weight:800}
+    footer{padding:34px 24px;background:var(--ink);color:#aeb9b3;text-align:center;font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+    @media(max-width:900px){.section-head,.two-col{grid-template-columns:1fr}.problem-grid{grid-template-columns:1fr}.workflow{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:620px){.nav{min-height:64px;padding:0 20px}.hero{padding:64px 22px 72px}.impact{grid-template-columns:1fr}.metric{padding-top:22px}.section{padding:72px 22px}.workflow,.qa-list{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <nav class="nav" aria-label="Draft page navigation">
+    <a class="brand" href="index.html" aria-label="Dinesh Shrestha home">DS<span>.</span></a>
+    <span class="draft">DRAFT · NOT PUBLISHED</span>
+  </nav>
+  <main>
+    <section class="hero">
+      <p class="eyebrow">SUCCESS STORY · GIS AUTOMATION · ARCGIS PRO · ARCPY</p>
+      <h1>Automated <em>Map Series</em> Production</h1>
+      <p class="lede">A repeatable ArcGIS Pro workflow that transforms an index layer into standardized, quality-checked map pages—without requiring an analyst to manage every page, filename, and export manually.</p>
+      <div class="impact" aria-label="Project impact">
+        <div class="metric"><strong>~90%</strong><span>reduction in mapbook production time</span></div>
+        <div class="metric"><strong>1,200+</strong><span>standardized map pages supported through automation</span></div>
+        <div class="metric"><strong>1 workflow</strong><span>from map index to validated PDF deliverables</span></div>
+      </div>
+    </section>
+
+    <section class="section cream">
+      <div class="section-head">
+        <h2>The repetitive work behind a mapbook.</h2>
+        <p>Large mapbooks require far more than pressing Export. Analysts must manage page extents, scale, labels, dynamic text, page order, filenames, layer visibility, individual PDFs, and final document assembly. Repeating those steps across hundreds of pages consumes time and creates opportunities for inconsistent or missing outputs.</p>
+      </div>
+      <div class="problem-grid">
+        <article class="card"><span>01 / TIME</span><h3>Manual page handling</h3><p>Opening, checking, and exporting each page individually makes production slow and difficult to reproduce.</p></article>
+        <article class="card"><span>02 / CONSISTENCY</span><h3>Many details to control</h3><p>Scale, extent, labels, dynamic text, naming, page order, and layer states must remain consistent throughout the mapbook.</p></article>
+        <article class="card"><span>03 / QUALITY</span><h3>Errors are easy to miss</h3><p>A missing page, incorrect extent, broken layer, or incomplete export can remain hidden until final review or delivery.</p></article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>One controlled workflow from index to mapbook.</h2>
+        <p>The automation treats the map-index layer as the production driver. Each page is processed using defined business rules, then checked and exported using a consistent naming and folder structure.</p>
+      </div>
+      <div class="workflow" aria-label="Automated map series workflow">
+        <article class="step"><span class="num">01</span><h3>Validate inputs</h3><p>Confirm index geometry, page names, ordering fields, layouts, layers, and required attributes.</p></article>
+        <article class="step"><span class="num">02</span><h3>Set each page</h3><p>Navigate to the index feature and apply the required extent, scale, rotation, labels, and dynamic text.</p></article>
+        <article class="step"><span class="num">03</span><h3>Run QA checks</h3><p>Check required values, layer availability, page identity, output paths, and export readiness.</p></article>
+        <article class="step"><span class="num">04</span><h3>Export consistently</h3><p>Create standardized page PDFs using controlled filenames, folders, resolution, and export settings.</p></article>
+        <article class="step"><span class="num">05</span><h3>Assemble delivery</h3><p>Merge pages in the correct order, record processing results, and prepare the final mapbook package.</p></article>
+      </div>
+    </section>
+
+    <section class="section mint">
+      <div class="two-col">
+        <div>
+          <p class="eyebrow">AUTOMATION SCOPE</p>
+          <h3>What the workflow handles</h3>
+          <ul>
+            <li>Map-index-driven page navigation</li>
+            <li>Extent, scale, and page-order control</li>
+            <li>Dynamic text and page-name updates</li>
+            <li>Standardized PDF exports</li>
+            <li>Consistent file and folder naming</li>
+            <li>Individual-page and merged-mapbook outputs</li>
+            <li>Processing messages and export logs</li>
+          </ul>
+        </div>
+        <div>
+          <p class="eyebrow">DESIGN PRINCIPLE</p>
+          <h3>Automation with visible quality control</h3>
+          <p>The goal is not simply to export pages faster. A production workflow must make the result traceable. Inputs are validated before processing, errors are captured during the run, and the final page count and output structure can be compared with the source index before delivery.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cream">
+      <div class="section-head">
+        <h2>QA/QC built around the deliverable.</h2>
+        <p>The checks focus on the failures that matter to a reviewer or client: missing pages, wrong geography, inconsistent presentation, broken content, and incomplete PDF packages.</p>
+      </div>
+      <div class="qa-list">
+        <article class="qa"><strong>Page completeness</strong><p>Compare expected index features with generated pages and flag missing or duplicate outputs.</p></article>
+        <article class="qa"><strong>Extent and scale</strong><p>Verify each page uses the intended geography and map scale rather than carrying settings from a previous page.</p></article>
+        <article class="qa"><strong>Labels and dynamic text</strong><p>Check required page names and layout text before export.</p></article>
+        <article class="qa"><strong>Layer availability</strong><p>Identify broken sources or missing operational layers that would create incomplete maps.</p></article>
+        <article class="qa"><strong>File naming and order</strong><p>Apply controlled names so pages sort correctly and assemble into the intended sequence.</p></article>
+        <article class="qa"><strong>Final package review</strong><p>Confirm the merged PDF, page count, export log, and delivery folders are complete.</p></article>
+      </div>
+    </section>
+
+    <section class="section result">
+      <p class="eyebrow">RESULT</p>
+      <h2>Mapbook production became faster, repeatable, and easier to verify.</h2>
+      <p>The workflow reduced a labor-intensive production process by approximately 90% and supported more than 1,200 standardized map pages. More importantly, it converted individual manual decisions into documented rules that can be repeated, reviewed, and maintained.</p>
+      <div class="tags" aria-label="Technologies and capabilities"><span>ArcGIS Pro</span><span>Python</span><span>ArcPy</span><span>Map Series</span><span>PDF Automation</span><span>Dynamic Text</span><span>GIS QA/QC</span></div>
+    </section>
+  </main>
+  <footer>Draft success story · Dinesh Shrestha · GIS Automation &amp; Spatial Analysis</footer>
+</body>
+</html>
